@@ -1,0 +1,47 @@
+Requisitos:
+
+	1. Node para windows
+	2. GIT para windows
+	3. Utilizar consola powershell
+
+
+Una vez que te instales el NodeJS
+	- node
+	- npm (gestor de paquetes)
+
+1. EJERCICIO RAPIDO
+	- Instalar el nodejs
+	- Abrir el powershell
+		- ejecutar el comando: npm -v
+		- ejecutar el comando: node -v
+
+
+CREAR UN PROYECTO EN NODEJS
+
+	1. npm init
+	2. Crea un archivo que llamado: package.json
+		2.1 Es el archivo que va a guardar nombre 
+			y referencia de los modulos (dependencias) a instalar en nuestro backend
+	3. Aplicar los fundamentos de programación sobre un backend
+		
+		3.1 Definición de variables y tipos
+		3.2 Lógica de programación
+		3.3 Iteración y control de flujo
+		3.4 Métodos y estructura de datos
+
+
+	Input: Def. de variables con sus valores
+	Output: console.log de nuestras variables
+
+	EJEMPLO:
+		1. Definir una variable de c/tipo
+		2. Mostrar en consola c/u de las variables
+
+	* Para correr un script en nodejs
+		- ejecutamos el comando: node app.js
+		- node [archivo-nombre].js
+
+2. EJERCICIO RAPIDO
+	- Crear un archivo app.js
+	- Definir dos a tres variables
+	- Mostrar en consola corriendo el comando: node app.js
