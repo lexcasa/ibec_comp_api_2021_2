@@ -45,3 +45,30 @@ CREAR UN PROYECTO EN NODEJS
 	- Crear un archivo app.js
 	- Definir dos a tres variables
 	- Mostrar en consola corriendo el comando: node app.js
+
+
+PROBLEMA: 
+
+	- Una persona puede viajar en avión a Brasil cumpliendo las siguientes condiciones
+	
+		1. Tener pasaporte o cedula
+		2. PRC negativo
+		3. Mayor de edad
+
+	* Input: variables que corresponde a: pasaporte, cedula, pcr, edad
+	* Output: "PUEDE VIAJAR", "NO PUEDE VIAJAR"
+	* Generar test unitarios de algunos de los escenarios
+
+3. EJERCICIO RAPIDO
+
+	- Una persona quiere alquilar un auto en Brasil y puede con las siguientes condiciones
+		
+		1. Tener tarjeta de credito con mas de 1000 USD disponible
+		2. Mayor de edad
+		3. Libreta de conducir internacional
+		4. Seguro medico
+
+	* Input: variables correspondientes a, tdcDisponible, edad, tieneLibreta, tieneSeguro
+	* Output: "PUEDE ALQUILAR", "NO PUEDE ALQUIAR"
+	* Generar test unitario para tres casos
+
