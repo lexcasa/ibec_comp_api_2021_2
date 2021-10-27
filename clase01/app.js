@@ -7,8 +7,15 @@ let persona = {
 	apellido: "Casadevall"
 }
 
+let calculadora = {
+	suma: function (a, b){
+		return a + b
+	}
+}
+
 console.log(nombre)
 console.log(edad)
 console.log(cond)
 console.log(lista)
 console.log(persona)
+console.log(calculadora.suma(1,1))

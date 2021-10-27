@@ -47,7 +47,7 @@ CREAR UN PROYECTO EN NODEJS
 	- Mostrar en consola corriendo el comando: node app.js
 
 
-PROBLEMA: 
+1. PROBLEMA: 
 
 	- Una persona puede viajar en avión a Brasil cumpliendo las siguientes condiciones
 	
@@ -72,3 +72,22 @@ PROBLEMA:
 	* Output: "PUEDE ALQUILAR", "NO PUEDE ALQUIAR"
 	* Generar test unitario para tres casos
 
+2. PROBLEMA
+
+	- Clasificar de una lista de alumnos cuales son los alumnos mayor de edad
+
+	* Input: edades [10, 15, 22, 18, 23]
+	* Output: edades [22, 18, 23]
+	* Generar un test que verifique el largo del array output con la cantidad de alumnos mayores de edad
+		parametros: (array, cantidad, label)
+			array.length === cantidad
+
+
+4. EJERCICIO RAPIDO
+
+	- Crear un objeto calculadora que contenga las 4 operaciones elementales entre dos parametros
+		- Suma, resta, multiplicacion y division
+
+	* Input: a, b
+	* Output: Va a depender de c/operacion
+	* Generar test por c/una de las operaciones
