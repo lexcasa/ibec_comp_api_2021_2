@@ -6,6 +6,9 @@ let cedula 	    = true
 let pcrNegativo = false
 let edad 	    = 29
 
+// Importar el modulo de tests
+const { funcTest } = require('./tests')
+
 const funcPuedeViajar = function (pasaporte, cedula, pcrNegativo, edad){
 	let puedeViajar = (pasaporte || cedula) && pcrNegativo && (edad >= MAYOR_EDAD)
 	if(puedeViajar){
@@ -13,14 +16,6 @@ const funcPuedeViajar = function (pasaporte, cedula, pcrNegativo, edad){
 	} else {
 		return "NO PUEDE VIAJAR"
 	}
-}
-
-
-const funcTest = function (output, pass, label){
-	if(output === pass){
-		return 'pass :: ' + label
-	}
-	return 'not pass :: ' + label
 }
 
 let test1 = funcTest( funcPuedeViajar(true, false, true, 18), 	"PUEDE VIAJAR", 	'test 1')

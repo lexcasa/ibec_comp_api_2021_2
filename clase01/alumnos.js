@@ -11,12 +11,7 @@ const clasificaEdades = function (edades){
 	return edadesMayor
 }
 
-const funcTest = function (arr, cantidad, label){
-	if(arr.length === cantidad){
-		return 'pass :: ' + label
-	}
-	return 'not pass :: ' + label
-}
+const funcTest = require('./tests').alumnosTest
 
 console.log(funcTest( clasificaEdades(edades), 3, 'test 1'))
 console.log(funcTest( clasificaEdades([]), 0, 'test 2'))

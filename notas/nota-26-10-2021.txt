@@ -91,3 +91,8 @@ CREAR UN PROYECTO EN NODEJS
 	* Input: a, b
 	* Output: Va a depender de c/operacion
 	* Generar test por c/una de las operaciones
+
+
+3. PROBLEMA
+	
+	- Generar un archivo .js para las funciones de test que podamos reutilizar en los demas ejercicios
