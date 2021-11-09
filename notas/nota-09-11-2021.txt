@@ -1,0 +1,130 @@
+- API Express
+
+	- ExpressJS es un framework 
+	- Arquitectura MVC
+	- Generar API's
+		- Application programming interface
+
+	[ Base de datos ] --- [ API ] --- [ WebApp Cliente ]
+
+	Comunicacion de API y Cliente se utiliza un std de datos
+		- XML
+		- JSON
+
+	[ API ] --- < JSON > --- [ Cliente ]
+
+	{ [Base de datos] --- [ API ] --- < JSON > }
+
+	- API Rest
+		- Programar en NodeJS / ExpressJS
+		- Exponer las API's a traves de HTTP
+			HTTP Verbos (metodos)
+
+				- GET
+				- POST
+				- PUT
+				- DELETE
+
+		- API
+			Estado: (URL, Metodo, I/O)
+
+	1. PROBLEMA
+
+	Crear una API para gestionar el CRUD de productos
+
+	* CRUD: Create, Read, Update, Delete
+	* Dado un modelo (producto) podemos ejecutar operaciones CRUD
+
+	- Modelo es la abstraccion de lo que necesita necesariamente mi sistema 
+	sobre la realidad
+
+		Producto: (codigo, nombre, precio)
+		
+		- Crear un producto
+		- Leer producto/s
+		- Editar un producto
+		- Eliminar un producto
+
+	Estados:
+
+		[Crear un producto]
+
+			- URL: API.com/productos/new (localhost)
+				-> {host}/{model}/{action}
+			- Metodo: POST
+			- Input:  {"cod":"ABC123", "nombre":"Manzana", "precio":10}
+			- Output: 
+				- Respuesta correcta: {"response":"Producto ingresado correctamente"}
+				- Respuesta error: 	  {"error":"Error al ingresar producto"}
+
+		[Leer producto/s]
+
+			- [Todos los productos]
+
+				- URL: API.com/productos
+					-> {host}/{model}/{null}
+				- Metodo: GET
+				- Input: null
+				- Output: 
+					- Respuesta correcta: {"response":[{...}, ...]}
+					- Respuesta error: {"error": "No se obtuvo productos"}
+
+			- [Un producto]
+
+				- URL: API.com/productos/ABC123
+					-> {host}/{model}/{action:codigo}
+				- Metodo: GET
+				- Input: null
+				- Output: 
+					- Respuesta correcta: {"response":{...}}
+					- Respuesta error: {"error": "No se obtuvo productos"}
+
+		[Editar un producto]
+
+			- URL: API.com/productos/ABC123
+				-> {host}/{model}/{action:codigo}
+			-> Metodo: PUT
+			- Input:
+				{"nombre":"Manzana", "precio":10}
+			- Output: 
+				- Respuesta correcta: {"response":"Producto editado correctamente"}
+				- Respuesta error: 	  {"error":"Error al editar producto"}
+
+		[Eliminar un producto]
+
+			- URL: API.com/productos/ABC123
+				-> {host}/{model}/{action:codigo}
+			- Metodo: DELETE
+			- Input: 
+				Opcional
+			- Output: 
+				- Respuesta correcta: {"response":"Producto eliminado correctamente"}
+				- Respuesta error: 	  {"error":"Error al eliminar producto"}
+
+	Arquitectura:
+		- MVC
+			-> Model/View/Controller
+			-> Model: Base de datos con su comunicacion
+			-> Controller: Recibe los datos y envia a la vista
+			-> View: app.js
+				-> JSON
+
+	Express Setup
+		-> Generar el proyecto de nodejs
+			-> Ejecutando: npm init
+			-> Creo el package.json
+			-> Creo un archivo .gitignore
+				-> Para ignorar: 
+					- node_modules
+					- package-lock.json
+			-> Instalar: nodemon
+				-> npm i -g nodemon
+		-> Instalar express
+			-> npm i --save express
+			-> "--save" guarda la referencia de la dependencia en el package.json
+		-> Correr API de express 
+			-> nodemon app.js
+			-> Configurar un comando
+				-> npm run dev
+					-> Ejecute: "nodemon app.js"
+
