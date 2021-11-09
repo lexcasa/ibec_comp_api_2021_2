@@ -128,3 +128,7 @@
 				-> npm run dev
 					-> Ejecute: "nodemon app.js"
 
+		-> Si ya existe el setup lo que se hace es ejecutar dentro de la carpeta
+			-> npm i
+				-> Va a instalar todas las dependencias del proyecto
+
