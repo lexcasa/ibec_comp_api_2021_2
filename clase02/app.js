@@ -49,13 +49,31 @@ app.get('/productos', (req, res) => {
 })
 
 app.get('/productos/:codigo', (req, res) => {
-  let cod = req.params.codigo
-  
+  let cod       = req.params.codigo
+  let respuesta = {error: "No encontro producto"}
+  let producto
+
+  productos.map( item => {
+    // Normalizar la busqueda
+    // De ambos lados tenemos que tener
+    // Mayusculas o minusculas
+    // El mismo valor y mismo tipo
+    if(item.cod.toUpperCase() === cod.toUpperCase()){
+      producto = item
+    }
+  })
+
+  if(producto){
+    respuesta = {
+      response: producto
+    }
+  }
+
   res.set({
     'Content-Type': 'application/json'
   })
 
-  res.send({response: cod})
+  res.send(respuesta)
 })
 
 app.listen(port, () => {
