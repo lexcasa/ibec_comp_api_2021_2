@@ -2,6 +2,11 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+let productos = [
+  {"cod":"ABC123", "nombre":"Manzana", "precio":10},
+  {"cod":"ABC111", "nombre":"Pera", "precio":10}
+]
+
 // Definimos un estado 
 // URL: localhost:3000/hello-world
 // Metodo: GET
@@ -25,10 +30,6 @@ app.get('/hello-world', (req, res) => {
 */
 
 app.get('/productos', (req, res) => {
-  let productos = [
-    {"cod":"ABC123", "nombre":"Manzana", "precio":10},
-    {"cod":"ABC111", "nombre":"Pera", "precio":10}
-  ]
 
   // Salida
   // content-type de la salida
@@ -37,7 +38,7 @@ app.get('/productos', (req, res) => {
     'Content-Type': 'application/json'
   })
   let respuesta = {error: "No existe productos"}
-  
+
   if(productos.length > 0){
     respuesta = {
       response: productos
@@ -45,6 +46,16 @@ app.get('/productos', (req, res) => {
   }
   // Defino el body de la salida
   res.send(respuesta)
+})
+
+app.get('/productos/:codigo', (req, res) => {
+  let cod = req.params.codigo
+  
+  res.set({
+    'Content-Type': 'application/json'
+  })
+
+  res.send({response: cod})
 })
 
 app.listen(port, () => {
