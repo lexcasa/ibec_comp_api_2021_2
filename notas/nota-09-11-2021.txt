@@ -132,3 +132,15 @@
 			-> npm i
 				-> Va a instalar todas las dependencias del proyecto
 
+	1. EJERCICIO RAPIDO
+
+	Buscar un producto por el codigo y exponer la API con su respuesta y error
+		- Si encuentro el producto: 
+			{
+				response: {...}
+			}
+		- Si no encuentro: 
+			{
+				error: "Error no encuentro producto"
+			}
+

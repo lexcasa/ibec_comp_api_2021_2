@@ -1,0 +1,22 @@
+- API En express del flujo en memoria de un CRUD
+- Modelo de Producto {cod, nombre, precio}
+    -> Create
+        -> POST /productos/new
+    -> Update
+        -> PUT /productos/:cod
+    -> Delete
+        -> DELETE /productos/:cod
+    
+    - Definimos un array un array dentro de un servicio
+    - Todas las operaciones van a inpactar en ese array
+
+Abstraccion:
+
+- Output: 
+        - Respuesta correcta: {"response":"Producto ingresado correctamente"}
+        - Respuesta error: 	  {"error":"Error al ingresar producto"}
+
+EJERCICIO 1
+
+    - Buscar un producto por codigo a traves de un POST
+    
