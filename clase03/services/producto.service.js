@@ -13,6 +13,15 @@ const Producto = {
             }
         })
         return findProducto
+    },
+    productoBuscarNombre: function (producto){
+        let findProductos = []
+        productos.map( item => {
+            if(item.nombre.toLocaleLowerCase().includes( producto.nombre.toLocaleLowerCase() )){
+                findProductos.push(item)
+            }
+        })
+        return findProductos
     }
 }
 module.exports = Producto

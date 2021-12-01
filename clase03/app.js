@@ -31,6 +31,13 @@ app.post('/productos/buscar', (req,res) => {
     res.send({response: response})
 })
 
+app.put('/productos/buscar/nombre', (req,res) => {
+    const Producto = require('./services/producto.service')
+    const response = Producto.productoBuscarNombre(req.body)
+    res.set({'Content-Type': 'application/json'})
+    res.send({response: response})
+})
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
