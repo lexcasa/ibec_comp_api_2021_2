@@ -16,7 +16,7 @@ Abstraccion:
         - Respuesta correcta: {"response":"Producto ingresado correctamente"}
         - Respuesta error: 	  {"error":"Error al ingresar producto"}
 
-EJERCICIO 1
+EJERCICIO RAPIDO 1
 
     - Buscar un producto por codigo a traves de un POST
     - npm i          -> Instala las dependencias
@@ -28,3 +28,15 @@ EJERCICIO 1
     
     Output -> 
         {"response": {...}}
+
+EJERCICIO RAPIDO 2
+
+    - Buscar por coincidencia de nombre
+        -> Input -> "man"
+        -> Output -> Todos los productos que contengan "man" dentro del nombre
+    
+    POST /productos/buscar/nombre
+    -> {"nombre":"man"}
+    {response: [{...}, ...]}
+
+
