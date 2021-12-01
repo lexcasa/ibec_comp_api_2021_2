@@ -19,4 +19,12 @@ Abstraccion:
 EJERCICIO 1
 
     - Buscar un producto por codigo a traves de un POST
+    - npm i          -> Instala las dependencias
+    - nodemon app.js -> Ambiente de desarrollo
+        -> Si no tengo instalado el nodemon lo instalo: npm i -g nodemon
+
+    POST /productos/buscar
+    {"cod":"ABC123"}
     
+    Output -> 
+        {"response": {...}}

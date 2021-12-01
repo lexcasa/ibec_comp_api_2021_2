@@ -4,6 +4,15 @@ const Producto = {
     productoNuevo: function (producto){
         productos.push(producto)
         return productos
+    },
+    productoBuscar: function (producto){
+        let findProducto 
+        productos.map( item => {
+            if(producto.cod == item.cod){
+                findProducto = item
+            }
+        })
+        return findProducto
     }
 }
 module.exports = Producto

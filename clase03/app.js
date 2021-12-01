@@ -24,6 +24,12 @@ app.post('/productos/new', (req,res) => {
     res.send({response: response})
 })
 
+app.post('/productos/buscar', (req,res) => {
+    const Producto = require('./services/producto.service')
+    const response = Producto.productoBuscar(req.body)
+    res.set({'Content-Type': 'application/json'})
+    res.send({response: response})
+})
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
