@@ -1,0 +1,100 @@
+- ROADMAP
+    -> Mock de las operaciones CRUD
+    -> Conocer una base de datos NOSQL
+        -> MongoDB
+    -> Conectar la base de datos NOSQL con backend
+        -> Utilizamos el package mongodb
+    -> Integrando el CRUD con una WebApp de Vue
+
+Base de datos NOSQL
+    -> Una base de datos orientada a documentos
+        -> documento: JSON
+        -> Nos interesa entender si MongoDB soporta las operaciones CRUD
+            -> Crear un documento
+            -> Obtener uno o todos los documentos
+            -> Actualizar un documento
+            -> Eliminar un documento
+    
+    -> Pre-requisito
+        -> Robo 3T
+        -> MongoDB server
+    
+    -> Definir: Schema
+        -> Modelo -> Schema es el soporte de datos de un modelo
+        -> Modelo: 
+        Producto {
+            cod: String,
+            nombre: String,
+            precio: Float
+        }
+
+        Modelo:
+
+        {
+            "cod":"ABC222",
+            "nombre":"Naranja",
+            "precio":12
+        }
+    Base de datos: Productos
+        -> Colecciones
+            -> items
+            -> Soportan schemas
+                -> Documentos
+
+        -> Crear un documento dentro de items
+            -> {
+                "cod":"ABC222",
+                "nombre":"Naranja",
+                "precio":12
+            }
+       
+            db.getCollection('items').insertOne({
+                "cod":"ABC222",
+                "nombre":"Naranja",
+                "precio":12
+            })
+
+            Item: {
+                _id: ObjectId,
+                cod: String, 
+                nombre: String,
+                precio: Double
+            }
+
+        -> Una operacion de Read
+            db.getCollection('items').find()
+                -> Todos documentos de la coleccion
+        
+        -> Operacion de Update
+            db.getCollection('items').updateOne(
+                {"cod":"ABC123"},
+                {
+                    $set: {"nombre": "Tangerina"}
+                }
+            )
+            -> Actualizo el campo "nombre" por la propiedad "cod"
+
+        -> Operacion de Delete
+
+            db.getCollection('items').deleteOne({
+                "cod":"ABC123"
+            })
+
+    EJERCICIO RAPIDO 1
+
+        -> Crear una base de datos "tienda"
+            -> Crear las colecciones: 
+                -> productos
+                    -> Pensar esquema minimo
+                    Producto: {
+                        cod: String,
+                        nombre: String,
+                        precio: Double,
+                        cantidad: Int32
+                    }
+                -> clientes
+                    -> Pensar esquema minimo
+                -> proveedores
+                    -> Pensar esquema minimo
+
+            -> Crear 3 documentos de c/coleccion
