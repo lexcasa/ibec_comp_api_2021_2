@@ -90,11 +90,60 @@ Base de datos NOSQL
                         cod: String,
                         nombre: String,
                         precio: Double,
-                        cantidad: Int32
+                        cantidad: Double
                     }
+
                 -> clientes
-                    -> Pensar esquema minimo
+                    -> {
+                        nombre: String, 
+                        documento: String
+                    }
                 -> proveedores
-                    -> Pensar esquema minimo
+                    -> {
+                        nombre: String,
+                        rut: String
+                    }
 
             -> Crear 3 documentos de c/coleccion
+
+        Productos - Query Crear
+
+            db.getCollection('productos').insertMany(
+                [
+                    {"cod":"ABC123","nombre":"Manzana","precio":12.22,"cantidad":2},
+                    {"cod":"ABC111","nombre":"Pera","precio":10.22,"cantidad":2},
+                    {"cod":"ABC222","nombre":"Naranja","precio":12.22,"cantidad":2}
+                ]
+            )
+
+        Clientes - Query Crear
+
+            db.getCollection('clientes').insertMany(
+                [
+                    {"nombre":"Alex","documento":"123213"},
+                    {"nombre":"Juan","documento":"1111"},
+                    {"nombre":"Manuel","documento":"11123"}
+                ]
+            )
+        
+        Proveedores - Query crear
+
+        db.getCollection('clientes').insertMany(
+                [
+                    {"nombre":"Alex","rut":"123213"},
+                    {"nombre":"Juan","rut":"1111"},
+                    {"nombre":"Manuel","rut":"11123"}
+                ]
+            )
+    
+    - Quiero crear una API para listar productos de la tienda
+        -> Crear una API en express
+        -> Conectar la API con un package de mongodb
+    
+    EJERCICIO RAPIDO 2
+        -> Create un producto
+            -> POST /productos/new
+                {"cod":"ABC123","nombre":"Manzana","precio":12.22,"cantidad":2}
+            -> insertOne a la base de mongoDB
+            -> construir el metodo en el servicio de insertOne
+    
