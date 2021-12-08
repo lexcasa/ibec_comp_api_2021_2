@@ -11,6 +11,13 @@ const Mdb = {
         const col = db.collection(collection);
         const documents  = await col.find(filter).toArray()
         return documents
+    },
+    insertOne: async (document, collection) => {
+        await client.connect();
+        const db = client.db(dbName);
+        const col = db.collection(collection);
+        const response  = await col.insertOne(document)
+        return response
     }
 }
 
