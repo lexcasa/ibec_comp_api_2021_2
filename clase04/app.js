@@ -23,6 +23,15 @@ app.post('/productos/new', async (req, res) => {
     }
 })
 
+
+app.put('/productos/edit', async (req, res) => {
+    res.set({'Content-Type': 'application/json'})
+    // Verificar si ya existe el cod dentro de la base
+    const body     = req.body
+    const response = await Mdb.updateOne(req.body, 'productos')
+    res.send({response: response})
+})
+
 app.get('/clientes', async (req, res) => {
     const clientes = await Mdb.find({}, 'clientes')
     res.set({'Content-Type': 'application/json'})

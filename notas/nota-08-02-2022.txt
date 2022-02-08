@@ -1,0 +1,55 @@
+CRUD Productos
+    - Pendientes
+        -> Update de un producto por ID
+        -> Obtener producto por ID
+        -> Delete de un producto por ID
+
+    Observacion: Continuamos el desarrollo sobre la carpeta clase04
+
+
+    -> Despues de crear la Op. CRUD con la API
+    -> Comenzamos a trabajar en la integracion con una app vue
+
+
+-> Operacion de Update
+
+    db.getCollection('items').updateOne(
+        {"cod":"ABC123"},
+        {
+            $set: {"nombre": "Tangerina"}
+        }
+    )
+
+    -> Estado para el update
+        API
+        ----- 
+            -> Metodo: PUT
+            -> /productos/edit
+            -> body: {
+                id: "asdsad123213",
+                ...
+            }
+        -----
+        MongoDB
+            Ejemplo: 
+
+            {
+                "_id": "61aff443fcdd1c9d90a60e0b",
+                "cod": "ABC123",
+                "nombre": "Manzana",
+                "precio": 12.22,
+                "cantidad": 2
+            }
+
+            -> Update one en la base de datos
+
+            db.getCollection('productos').updateOne(
+                {"_id": ObjectId("61aff443fcdd1c9d90a60e0b")},
+                {
+                    $set: {"nombre": "Tangerina"}
+                }
+            )
+
+    EJERCICIO RAPIDO: 
+
+        -> Crear la API:  Obtener producto por ID
