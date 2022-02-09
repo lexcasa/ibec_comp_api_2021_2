@@ -34,7 +34,19 @@ const Mdb = {
             }
         )
         return response
-    }
+    },
+    findById: async (filter, collection) => {
+        await client.connect();
+        const db = client.db(dbName);
+        const col = db.collection(collection);
+
+        try {
+            const documents  = await col.find({_id: ObjectId(filter.id)}).toArray()
+            return documents
+        } catch (e){
+            return []
+        }
+    },
 }
 
 module.exports = Mdb

@@ -52,4 +52,19 @@ CRUD Productos
 
     EJERCICIO RAPIDO: 
 
-        -> Crear la API:  Obtener producto por ID
+        -> Crear la API: Obtener producto por ID
+
+        API
+            -> Metodo: GET
+            -> /productos/:id -> :id va a ser la _id del producto
+            -> body N/A 
+        
+        ---
+
+        MongoDB
+
+            db.getCollection('productos').find(
+                {_id: ObjectId("61aff443fcdd1c9d90a60e0b")
+                })
+        
+

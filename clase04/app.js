@@ -11,6 +11,19 @@ app.get('/productos', async (req, res) => {
     res.send({response: productos})
 })
 
+
+app.get('/productos/:id', async (req, res) => {
+    const id        = req.params.id
+    const productos = await Mdb.findById({id: id}, 'productos')
+    res.set({'Content-Type': 'application/json'})
+
+    if(productos.length > 0){
+        res.send({response: productos[0]})
+    } else {
+        res.send({error: "No existe producto para la id: " + id})
+    }
+})
+
 app.post('/productos/new', async (req, res) => {
     res.set({'Content-Type': 'application/json'})
     // Verificar si ya existe el cod dentro de la base
