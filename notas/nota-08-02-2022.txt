@@ -66,5 +66,25 @@ CRUD Productos
             db.getCollection('productos').find(
                 {_id: ObjectId("61aff443fcdd1c9d90a60e0b")
                 })
-        
+
+    PROYECTO FRONTEND: 
+
+    1. Creo el archivo package.json con el npm init
+    2. Instalacion del vue-cli global
+        -> npm install -g @vue/cli
+    3. Crear una aplicacion base con el vue-cli
+        -> vue create [nombre-aplicacion]
+        -> Ejemplo: vue create app
+    4. Levantar la aplicacion web: 
+        -> npm run serve
+
+
+    PLAN: 
+        -> Formulario con el ciclo CRUD
+            -> Como se comunica el form con los datos del JS
+            -> Como muestro datos en el front a partir de JS
+            -> Capas logicas del Vue
+                -> data, methods, mounted, created, watch
+        -> Como conecto una API con la app de Vue
+        -> Integrar el ciclo completo front - backend        
 
