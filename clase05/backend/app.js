@@ -1,8 +1,10 @@
 const app = require('express')()
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const port = 3000
 const Mdb  = require('./services/mdb.service')
 
+app.use(cors())
 app.use(bodyParser.json())
 
 app.get('/productos', async (req, res) => {
