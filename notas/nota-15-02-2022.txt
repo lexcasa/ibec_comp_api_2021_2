@@ -1,0 +1,44 @@
+DESARROLLO VUE: 
+
+- Entramos en la carpeta app dentro de frontend
+    -> npm run serve
+
+- Integrar las operaciones CRUD de la API en front
+
+    -> Create/update
+        -> Formulario
+    -> Read: tabla con los elementos
+    -> Delete va ser una accion (con un boton)
+
+
+    1. Integrar el GET de productos de la API dentro de la aplicacion de VUE
+
+        -> Estructura de un componente de Vue
+        -> Como un array de objetos se lista de forma dinamica dentro de un tabla
+        -> Como conecto una API con el componente y lo cargo dentro de un array
+    
+
+    Estructuras principales: 
+
+        1. data (){ ... }
+        2. methods: { },
+        3. mounted() {...}
+
+
+        1. Data: defino el modelo de mi componente 
+            -> Comunicacion del JS con el HTML lo hace a traves del data bind
+
+        2. Methods: Definimos la funcionalidad del componente
+
+        3. Mounted: Es la funcion que se ejecuta cuando carga el componente
+
+        EJEMPLO: 
+            1. Definimos un contador que al dar clic en un boton incrementa el valor
+            2. Al cargar el componente que el contador ya este seteado en 20
+            3. Como se comunica el HTML con el Vue a traves de un input
+                -> Agregamos un input para setear el valor manualmente
+
+        EJERCICIO RAPIDO I: 
+            -> Agregar el nombre en un input y a traves de un clic mostrar el nombre y apellido
+            -> Apellido esta fijo en una variable del data
+

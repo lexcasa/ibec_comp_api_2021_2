@@ -1,17 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h2>{{titulo}}</h2>
+    <h3>{{counter}}</h3>
+    <input type="text" v-model="counter">
+    <button v-on:click="sumaCounter()">Sumar!</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return {
+      titulo: "App de Vue ::",
+      counter: 0
+    }
+  },
+  methods: {
+    sumaCounter: function (){
+      this.counter++;
+    }
+  },
+  mounted(){
+    this.counter = 20
   }
 }
 </script>
