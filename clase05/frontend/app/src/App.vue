@@ -25,7 +25,7 @@
               <td>{{producto.precio}}</td>
               <td>{{producto.cantidad}}</td>
               <th>
-                <button>Seleccionar</button>
+                <button v-on:click="seleccionarProducto(producto)">Seleccionar</button>
                 <button>Eliminar</button>
               </th>
             </tr>
@@ -88,6 +88,9 @@ export default {
   methods: {
     muestraNombre: function (){
       this.nombreCompleto = this.nombre + " " + this.apellido
+    },
+    seleccionarProducto: function (producto){
+      console.log(producto)
     },
     guardaProducto: function (){
       console.log(this.producto)
