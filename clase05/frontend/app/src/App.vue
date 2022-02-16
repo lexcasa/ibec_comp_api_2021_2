@@ -32,6 +32,19 @@
           </tbody>
         </table>
     </div>
+    <div>
+      <form action="">
+        <input type="text" v-model="producto.cod" placeholder="Codigo producto">
+        <br>
+        <input type="text" v-model="producto.nombre" placeholder="Nombre">
+        <br>
+        <input type="number" v-model="producto.cantidad" placeholder="Cantidad">
+        <br>
+        <input type="number" v-model="producto.precio" placeholder="Precio">
+        <br>
+        <button v-on:click="guardaProducto()" type="button">Guardar</button>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -48,6 +61,12 @@ export default {
       nombre: "",
       apellido: "Casadevall",
       nombreCompleto: "",
+      producto: {
+        cod: '',
+        nombre: '',
+        cantidad: 0,
+        precio: 0
+      },
       productos: [
         {
             "_id": "61aff443fcdd1c9d90a60e0b",
@@ -69,6 +88,12 @@ export default {
   methods: {
     muestraNombre: function (){
       this.nombreCompleto = this.nombre + " " + this.apellido
+    },
+    guardaProducto: function (){
+      console.log(this.producto)
+      axios.post(API + '/productos/new', this.producto).then( res => {
+        console.log("res :: ", res.data)
+      })
     }
   },
   mounted(){
@@ -85,7 +110,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
 }

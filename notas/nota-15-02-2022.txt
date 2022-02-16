@@ -42,3 +42,24 @@ DESARROLLO VUE:
             -> Agregar el nombre en un input y a traves de un clic mostrar el nombre y apellido
             -> Apellido esta fijo en una variable del data
 
+        Integrar el servicio de Productos en un listado dinamico
+
+            -> Definimos una lista (array de objetos)
+                -> mostrar dinamicamente en una tabla
+            -> Importar el modulo axios
+                -> npm i --save axios
+
+        EJERCICIO RAPIDO II: 
+            
+            CREAR PRODUCTO:
+
+                -> Crear un formulario: cod, nombre, precio, cantidad
+                -> Funcion que al dar clic en "guardar" capture el objeto producto
+                    -> console.log(this.producto)
+                -> Enviar el producto a la API a traves de un POST
+            
+            EDITAR PRODUCTO: 
+
+                -> Seleccionar un producto de la tabla y cargar en el formulairo
+                -> Al producto seleccionado, al dar click en guardar edita el producto
+                -> Enviar el producto a la API a traves de un PUT
