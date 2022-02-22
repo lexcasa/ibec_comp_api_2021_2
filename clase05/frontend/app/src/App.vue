@@ -98,16 +98,27 @@ export default {
     },
     guardaProducto: function (){
       console.log(this.producto)
-      axios.post(API + '/productos/new', this.producto).then( res => {
-        console.log("res :: ", res.data)
+      if(!this.producto._id){
+        axios.post(API + '/productos/new', this.producto).then( res => {
+          console.log("res :: ", res.data)
+          this.obtenerProductos()
+        })
+      } else {
+        axios.put(API + '/productos/edit', this.producto).then( res => {
+          console.log("edit :: ", res.data)
+          this.obtenerProductos()
+        })
+      }
+    },
+    obtenerProductos: function (){
+      // Hacemos la peticion de tipo GET a la API de productos
+      axios.get(API + '/productos').then( (res) => {
+        this.productos = res.data.response
       })
     }
   },
   mounted(){
-    // Hacemos la peticion de tipo GET a la API de productos
-    axios.get(API + '/productos').then( (res) => {
-      this.productos = res.data.response
-    })
+    this.obtenerProductos()
   }
 }
 </script>
