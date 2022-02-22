@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div v-if="false">
-      <input type="text" v-model="nombre">
-      <h2>{{nombreCompleto}}</h2>
-      <button v-on:click="muestraNombre()">Mostrar nombre completo!</button>
-    </div>
     <div>
+      <button v-on:click="showForm = true" style="margin-right: 1rem">+Producto</button>
+      <button v-on:click="showForm = false">Listar productos</button>
+    </div>
+    <!-- Listado de productos -->
+    <div v-if="!showForm">
         <table>
           <thead>
             <tr>
@@ -32,7 +32,8 @@
           </tbody>
         </table>
     </div>
-    <div>
+    <!-- FORM -->
+    <div v-if="showForm">
       <form action="">
         <input type="text" v-model="producto.cod" placeholder="Codigo producto">
         <br>
@@ -64,6 +65,7 @@ export default {
       nombre: "",
       apellido: "Casadevall",
       nombreCompleto: "",
+      showForm: false,
       producto: {
         cod: '',
         nombre: '',
@@ -102,11 +104,13 @@ export default {
         axios.post(API + '/productos/new', this.producto).then( res => {
           console.log("res :: ", res.data)
           this.obtenerProductos()
+          this.clearProducto()
         })
       } else {
         axios.put(API + '/productos/edit', this.producto).then( res => {
           console.log("edit :: ", res.data)
           this.obtenerProductos()
+          this.clearProducto()
         })
       }
     },
@@ -115,6 +119,14 @@ export default {
       axios.get(API + '/productos').then( (res) => {
         this.productos = res.data.response
       })
+    },
+    clearProducto: function (){
+      this.producto = {
+        cod: '',
+        nombre: '',
+        cantidad: 0,
+        precio: 0
+      }
     }
   },
   mounted(){
@@ -130,6 +142,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
