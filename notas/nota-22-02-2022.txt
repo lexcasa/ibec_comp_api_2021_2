@@ -1,0 +1,7 @@
+EJERCICIO RAPIDO I: 
+
+    EDITAR PRODUCTO: 
+
+        1. Seleccionar un producto de la tabla y cargar en el formulairo
+        2. Al producto seleccionado, al dar click en guardar edita el producto
+            -> Enviar el producto a la API a traves de un PUT

@@ -49,10 +49,13 @@
 </template>
 
 <script>
-
 import axios from 'axios'
 
 const API = 'http://localhost:3000'
+
+const copy = function (obj){
+  return JSON.parse( JSON.stringify(obj) )
+}
 
 export default {
   name: 'App',
@@ -91,6 +94,7 @@ export default {
     },
     seleccionarProducto: function (producto){
       console.log(producto)
+      this.producto = copy(producto)
     },
     guardaProducto: function (){
       console.log(this.producto)
