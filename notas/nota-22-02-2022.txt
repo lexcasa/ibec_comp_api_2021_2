@@ -28,3 +28,6 @@ MEJORAS:
 
     5. Control de errores
         -> Si API despliega errores mostrar esos errores en un alerta
+        -> Control de campos obligatorios del formulario
+
+    6. Seleccionar producto que lo haga atraves del GET por ID de la API
