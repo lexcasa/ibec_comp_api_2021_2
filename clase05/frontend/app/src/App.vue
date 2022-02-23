@@ -25,7 +25,7 @@
               <td>{{producto.precio}}</td>
               <td>{{producto.cantidad}}</td>
               <th>
-                <button v-on:click="seleccionarProducto(producto)">Seleccionar</button>
+                <button v-on:click="seleccionarProducto(producto._id)">Seleccionar</button>
                 <button v-on:click="eliminarProducto(producto._id)">Eliminar</button>
               </th>
             </tr>
@@ -54,9 +54,9 @@ import axios from 'axios'
 
 const API = 'http://localhost:3000'
 
-const copy = function (obj){
-  return JSON.parse( JSON.stringify(obj) )
-}
+// const copy = function (obj){
+//   return JSON.parse( JSON.stringify(obj) )
+// }
 
 export default {
   name: 'App',
@@ -94,9 +94,12 @@ export default {
     muestraNombre: function (){
       this.nombreCompleto = this.nombre + " " + this.apellido
     },
-    seleccionarProducto: function (producto){
-      console.log(producto)
-      this.producto = copy(producto)
+    seleccionarProducto: function (id){
+      // console.log(producto)
+       axios.get(API + '/productos/' + id).then( (res) => {
+          this.producto = res.data.response
+        })
+      // this.producto = copy(producto)
       this.showForm = true
     },
     guardaProducto: function (){
@@ -104,12 +107,24 @@ export default {
       if(!this.producto._id){
         axios.post(API + '/productos/new', this.producto).then( res => {
           console.log("res :: ", res.data)
+          
+          if(res.data.error){
+            alert(res.data.error)
+            return
+          }
+
           this.obtenerProductos()
           this.clearProducto()
         })
       } else {
         axios.put(API + '/productos/edit', this.producto).then( res => {
           console.log("edit :: ", res.data)
+
+          if(res.data.error){
+            alert(res.data.error)
+            return
+          }
+
           this.obtenerProductos()
           this.clearProducto()
         })
