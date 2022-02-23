@@ -19,8 +19,8 @@ MEJORAS:
         -> Boton para mostrar el formulario
 
     4. Eliminar un producto por su ID
-        -> Implementar API con DELETE 
-        -> Integrar en el front la accion de Eliminar
+        -> [x] Implementar API con DELETE 
+        -> [x] Integrar en el front la accion de Eliminar
 
         Consulta en el MongoDB: 
 

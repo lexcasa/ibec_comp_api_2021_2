@@ -26,7 +26,7 @@
               <td>{{producto.cantidad}}</td>
               <th>
                 <button v-on:click="seleccionarProducto(producto)">Seleccionar</button>
-                <button>Eliminar</button>
+                <button v-on:click="eliminarProducto(producto._id)">Eliminar</button>
               </th>
             </tr>
           </tbody>
@@ -127,6 +127,15 @@ export default {
         nombre: '',
         cantidad: 0,
         precio: 0
+      }
+    },
+    eliminarProducto: function (id){
+      console.log("id ::", id)
+      if(confirm("Esta seguro que quiere eliminar el producto?")){
+        axios.delete(API + '/productos/' + id).then( (res) => {
+          console.log("deleted ::", res.data)
+          this.obtenerProductos()
+        })
       }
     }
   },
