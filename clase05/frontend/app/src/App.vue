@@ -97,6 +97,7 @@ export default {
     seleccionarProducto: function (producto){
       console.log(producto)
       this.producto = copy(producto)
+      this.showForm = true
     },
     guardaProducto: function (){
       console.log(this.producto)

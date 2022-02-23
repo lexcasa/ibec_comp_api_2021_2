@@ -26,6 +26,14 @@ app.get('/productos/:id', async (req, res) => {
     }
 })
 
+app.delete('/productos/:id', async (req, res) => {
+    const id        = req.params.id
+    const productos = await Mdb.deleteOne(id, 'productos')
+    res.set({'Content-Type': 'application/json'})
+
+    res.send({response: productos})
+})
+
 app.post('/productos/new', async (req, res) => {
     res.set({'Content-Type': 'application/json'})
     // Verificar si ya existe el cod dentro de la base

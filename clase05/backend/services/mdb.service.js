@@ -47,6 +47,16 @@ const Mdb = {
             return []
         }
     },
+    deleteOne: async (id, collection) => {
+        await client.connect();
+        const db = client.db(dbName);
+        const col = db.collection(collection);
+
+        const response  = await col.deleteOne(
+            {"_id":ObjectId(id)}
+        )
+        return response
+    }
 }
 
 module.exports = Mdb
